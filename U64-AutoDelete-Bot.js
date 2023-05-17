@@ -2,8 +2,8 @@
 // Author: NZCypher819
 
 // Set configuration Information
-const targetChannel = '<TARGET CHANNEL ID>';   // The Target Channel ID
-const botToken = '<YOUR BOTS ACCESS TOKEN>';  // The bot access token
+const targetChannels = ['<channel id 1>', '<channel id 1>', '<channel id 1>']; // Array of target channel IDs
+const botToken = '<token>';  // The bot access token
 
 const { Client, GatewayIntentBits } = require('discord.js');
 const client = new Client({
@@ -34,19 +34,17 @@ client.on('messageCreate', async message => {
  
 // This is the autodelete part. It looks for a message from the targetChannel, if it matches then note it and start the timer for deletion.
 client.on('messageCreate', (message) => {
-	// Some console output, primarily for debugging and helping to show you its doing something.
-	const msgchannelid = message.channel.id;
-	console.log(message.content);
-	console.log(msgchannelid);
-
-	// if the message is from the target channel, then start timer for deletion.
-    if (msgchannelid === targetChannel) {
-		setTimeout(() => {
-            message.delete();
-        }, 1000 * 60 * 15); // delete message after 15mins
+    const msgChannelId = message.channel.id;
+    console.log(message.content);
+    console.log(msgChannelId);
+  
+    // Check if the message is from any of the target channels
+    if (targetChannels.includes(msgChannelId)) {
+      setTimeout(() => {
+        message.delete();
+      }, 1000 * 60 * 15); // Delete message after 15 minutes
+    } else {
+      console.log('I saw something, but did nothing...');
     }
-	else {console.log('I saw something, but did nothing...')}  // This is more debugging on the console. 
-
-});
-
+  });
 client.login(botToken);

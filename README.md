@@ -26,7 +26,11 @@ To run the bot on a Windows Server, you will need to do the following:
 
     2. Copy the U64-AutoDelete-Bot.js file into a folder for which you will run it from.
 
-    3. Replace placeholder values in the bot file: Replace the placeholder values in the script with the actual values. The <YOUR BOTS ACCESS TOKEN> should be the token of your bot, the <TARGET CHANNEL ID> should be the ID of the channel you want to watch. (You need to have your discord client in Application Test Mode aka developer mode to get the ID - More info here https://discord.com/developers/docs/game-sdk/store)
+    3. Replace placeholder values in the bot file: Replace the placeholder values in the script with the actual values. 
+    - The <YOUR BOTS ACCESS TOKEN> should be the token of your bot
+    - <channel id 1>, <channel id 2> and <channel id 3> are the channels you want to monitor.  Add further channels as required 
+    
+    You need to have your discord client in Application Test Mode aka developer mode to get the ID - More info here https://discord.com/developers/docs/game-sdk/store
 
     4. Install dependencies: Open a command prompt or PowerShell in the same directory as your bot file, and run the following command 'npm install discord.js' to install the Discord.js library that the script depends on.   For debugging you can also install nodemon 'npm install nodemon'  This makes diagnosing issues a bit easier.
 
