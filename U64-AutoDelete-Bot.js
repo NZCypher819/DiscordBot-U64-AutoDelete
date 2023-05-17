@@ -2,7 +2,7 @@
 // Author: NZCypher819
 
 // Set configuration Information
-const targetChannels = ['<channel id 1>', '<channel id 1>', '<channel id 1>']; // Array of target channel IDs - chat\admin\status
+const targetChannels = ['<channel id 1>', '<channel id 1>', '<channel id 1>']; // Array of target channel IDs
 const botToken = '<token>';  // The bot access token
 
 const { Client, GatewayIntentBits } = require('discord.js');
